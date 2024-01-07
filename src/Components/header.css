@@ -1,0 +1,18 @@
+.header{
+    background-color: red;
+    width: 60px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    writing-mode: vertical-lr;
+    display: flex;
+    justify-content: space-evenly;
+    flex:1;
+}
+.last{
+    flex: .2;
+}
