@@ -1,18 +1,103 @@
 .header{
-    background-color: red;
-    width: 60px;
-    padding: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    min-width: 61px;
     height: 100vh;
-    overflow: hidden;
-    writing-mode: vertical-lr;
-    display: flex;
-    justify-content: space-evenly;
-    flex:1;
 }
-.last{
-    flex: .2;
+.wrapper-header{
+    min-width: 100%;
+    height: 100%;
+    background-color:#87f9d4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 4px;
+    
+     
+  
+}
+span{
+    cursor: pointer;
+    transition: 400ms;
+    font-family: "mulish",sans-serif;
+    font-size: 25px;
+}
+span:hover{
+    color: white;
+}
+
+.top-header{
+    display: flex;
+    writing-mode: vertical-lr;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 5px;
+    flex: .7;
+    align-items: flex-start;
+}
+.bottom-section{
+    flex: .24;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu{
+    display: none;
+}
+.sidebar-nav{
+    display: none;
+}
+.active-work{
+    opacity: 0;
+}
+
+@media (max-width:520px){
+    .wrapper-header{
+        display: none;
+        
+    }
+    .menu{
+        display: block;
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        padding: 5px;
+        color: #fff;
+        z-index: 3;
+    }
+    
+    .sidebar-nav{
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background-color:#4801FF;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+       
+    }
+    .small-wrapper-header{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items:flex-end;
+        margin-top: 12%;
+        gap: 4px;
+        
+        span{
+            font-size: 21vw;
+        }
+    }
+    .small-bottom{
+        margin-top: 10px;
+        display: flex;
+        gap: 15px;
+        span{
+            font-size: 12vw;
+            
+        }
+
+    }
 }

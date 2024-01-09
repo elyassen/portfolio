@@ -1,0 +1,19 @@
+.main{
+    width: 96vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color:#ED1846;
+    
+}
+@media (max-width:520px){
+    .main{
+        margin-top: -1%;
+    }
+}
+@media (max-width:520px){
+    .main{
+        min-width: 100vw;
+    }
+}
