@@ -13,7 +13,6 @@ function Work({ work, setwork }) {
         <RightOutlined className="close-icon-work" onClick={handleClick} />
         <span className="work-heading">Work</span>
       </div>
-      <div className="second-work">wkwkwk</div>
     </div>
   );
 }

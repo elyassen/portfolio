@@ -1,6 +1,8 @@
 .header{
-    min-width: 61px;
+    width: 61px;
     height: 100vh;
+    cursor: auto;
+    
 }
 .wrapper-header{
     min-width: 100%;
@@ -54,7 +56,6 @@ span:hover{
 @media (max-width:520px){
     .wrapper-header{
         display: none;
-        
     }
     .menu{
         display: block;
@@ -64,6 +65,7 @@ span:hover{
         padding: 5px;
         color: #fff;
         z-index: 3;
+        
     }
     
     .sidebar-nav{
