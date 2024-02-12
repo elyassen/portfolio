@@ -13,15 +13,11 @@
 .work::-webkit-scrollbar{
     display: none;
 }
-
-
-
-
+#about{
+    background-color: #ed1846;
+}
 
 .top-work{
-    
-    
-    
     display: flex;
     align-items: center;
     padding: 15px;
@@ -30,7 +26,8 @@
 
 .work-heading{
     padding: 1px;
-    
+    font-family: "mullish",sans-serif;
+    font-weight: 50;
     border-bottom: 1px solid black;
     animation: work-animation-heading 300ms;
 }
@@ -48,6 +45,12 @@
     
  }
     
+}
+
+@media(max-width:750px){
+    .work{
+        width: 70vw;
+    }
 }
 @media (max-width:520px){
     .work{

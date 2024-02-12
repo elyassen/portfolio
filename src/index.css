@@ -2,10 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 
   
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+@font-face {
+  font-family: boldStyle;
+  src: url("/boldfont.ttf");
+}
+@font-face {
+  font-family: cursiveHeading;
+  src: url("/AmaticSC-Regular.ttf");
 }

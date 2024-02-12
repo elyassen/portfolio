@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./header.css";
 import {
-  CloseCircleFilled,
   CloseOutlined,
   GithubOutlined,
   LinkedinOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
 import Work from "./Work";
+import About from "./About";
 
 function Header() {
   const [about, setAbout] = useState(false);
@@ -15,9 +15,6 @@ function Header() {
   const [contact, setContact] = useState(false);
   const [navIcon, setNavIcon] = useState(true);
 
-  function handleClick(setter) {
-    setter((value) => !value);
-  }
   const handlework = () => {
     setWork(true);
     setAbout(false);
@@ -39,25 +36,37 @@ function Header() {
     <div className="header">
       <div className="wrapper-header">
         <div className="top-header">
-          <span className={`${work ? "active-work" : ""}`} onClick={handlework}>
+          <span
+            id="span"
+            className={`${work ? "active-work" : ""}`}
+            onClick={handlework}
+          >
             Work
           </span>
-          <span onClick={handleAbout}>About</span>
-          <span onClick={handleContact}>Contact</span>
+          <span
+            id="span"
+            className={`${about ? "active-work" : ""}`}
+            onClick={handleAbout}
+          >
+            About
+          </span>
+          <span id="span" onClick={handleContact}>
+            Contact
+          </span>
         </div>
         <div className="bottom-section">
-          <GithubOutlined />
-          <LinkedinOutlined />
+          <GithubOutlined id="span" />
+          <LinkedinOutlined id="span" />
         </div>
       </div>
       <div onClick={() => setNavIcon(!navIcon)} className="menu">
-        {navIcon ? <MenuOutlined /> : <CloseOutlined />}
+        {navIcon ? <MenuOutlined id="icons" /> : <CloseOutlined id="icons" />}
       </div>
       {!navIcon && (
         <div className="sidebar-nav">
           <div className="small-wrapper-header">
             <span onClick={handlework}>Work</span>
-            <span>About</span>
+            <span onClick={handleAbout}>About</span>
             <span>Contact</span>
             <div className="small-bottom">
               <GithubOutlined />
@@ -69,6 +78,11 @@ function Header() {
       {work && (
         <div className="work-div">
           <Work work={work} setwork={setWork} />
+        </div>
+      )}
+      {about && (
+        <div className="about-div">
+          <About about={about} setAbout={setAbout} />
         </div>
       )}
     </div>

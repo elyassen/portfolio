@@ -6,6 +6,8 @@ function Main() {
   const [Month, SetMonth] = useState();
   const [bigCursor, setBigCursor] = useState(false);
   const [showCursor, setShowCursor] = useState(false);
+  const [red, setRed] = useState(true);
+  const [checkavailble, setCheck] = useState(false);
   const cursor = useRef(null);
   useEffect(() => {
     const date = new Date();
@@ -37,18 +39,29 @@ function Main() {
       onMouseLeave={mouseLeft}
       onMouseEnter={mouseEnter}
     >
-      <div className="hero">
-        <div className="name-area">
-          <h1 onMouseLeave={bigCursorLeft} onMouseEnter={handlebigcursor}>
-            yaseen Ahmed
-          </h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi quas
-            unde reprehenderit inventore labore, sequi esse itaque quo at, rem
-            quisquam qui non.
-          </p>
+      <div className="header-main">
+        <h2 className="portfolio-heading">PORTFOLIO</h2>
+
+        <span className="astrik">*</span>
+      </div>
+
+      <div className="name-area">
+        <div className="name">Hi there! I'm Yaseen</div>
+        <div
+          onMouseEnter={() => setBigCursor(true)}
+          onMouseLeave={() => setBigCursor(false)}
+          className="full-stack-heading"
+        >
+          <h1>Full Stack Developer</h1>
+        </div>
+        <div className="description">
+          A passionate full-stack developer on a mission to craft exceptional
+          digital experiences that make a difference. I've dedicated myself to
+          mastering the art of web development and honing my skills in both
+          front-end and back-end technologies.
         </div>
       </div>
+
       <div
         ref={cursor}
         id={`${bigCursor ? "big-cursor" : ""}`}
