@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import Work from "./Work";
 import About from "./About";
+import Contact from "./Contact";
 
 function Header() {
   const [about, setAbout] = useState(false);
@@ -67,10 +68,14 @@ function Header() {
           <div className="small-wrapper-header">
             <span onClick={handlework}>Work</span>
             <span onClick={handleAbout}>About</span>
-            <span>Contact</span>
+            <span onClick={handleContact}>Contact</span>
             <div className="small-bottom">
               <GithubOutlined />
               <LinkedinOutlined />
+            </div>
+            <div className="available">
+              <div className="green"></div>
+              AVAILABLE FOR FREELANCE WORK
             </div>
           </div>
         </div>
@@ -83,6 +88,11 @@ function Header() {
       {about && (
         <div className="about-div">
           <About about={about} setAbout={setAbout} />
+        </div>
+      )}
+      {contact && (
+        <div>
+          <Contact contact={contact} setContact={setContact} />
         </div>
       )}
     </div>

@@ -1,7 +1,7 @@
 .work{
-    width: 45vw;
+    width: 70vw;
     height: 100vh;
-    background-color: #ffde7a;
+    background-color: #87f9d4;
     z-index: 6;
     position: absolute;
     top: 0;
@@ -13,9 +13,7 @@
 .work::-webkit-scrollbar{
     display: none;
 }
-#about{
-    background-color: #ed1846;
-}
+
 
 .top-work{
     display: flex;
@@ -26,8 +24,8 @@
 
 .work-heading{
     padding: 1px;
-    font-family: "mullish",sans-serif;
-    font-weight: 50;
+    font-size: 35px;
+    font-family: "Protest Revolution", sans-serif;    
     border-bottom: 1px solid black;
     animation: work-animation-heading 300ms;
 }
@@ -58,6 +56,12 @@
         z-index: 99;
         right: 0;
         padding: 2px 4px;
+    }
+    .close-icon-work{
+        transform: rotate(180deg);
+        font-size: 25px;
+        font-weight: 200;
+        
     }
    
     

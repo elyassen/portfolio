@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import "./work.css";
 import { RightOutlined } from "@ant-design/icons";
-import "./about.css";
+import "./contact.css";
 
-function Work({ about, setAbout }) {
+function Contact({ contact, setContact }) {
   const handleClick = () => {
-    setAbout(!about);
+    setContact(!contact);
   };
   return (
-    <div id="about" className={`${about ? "hide-work" : ""} work`}>
+    <div id="contact" className={`${contact ? "hide-work" : ""} work`}>
       <div className="top-work">
         <RightOutlined className="close-icon-work" onClick={handleClick} />
-        <span className="work-heading">About</span>
+        <span className="work-heading">Contact</span>
       </div>
-      hello im about
+      hello im contact
     </div>
   );
 }
 
-export default Work;
+export default Contact;

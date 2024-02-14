@@ -1,0 +1,9 @@
+#about{
+    width: 50vw;
+    background-color: #ed1846;
+}
+@media (max-width:520px) {
+    #about{
+        width: 100vw;
+    }
+}

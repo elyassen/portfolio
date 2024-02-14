@@ -1,0 +1,9 @@
+#contact{
+    background-color: rgb(186, 100, 120);
+    width: 50vw;
+}
+@media (max-width:520px) {
+    #contact{
+        width: 100vw;
+    }
+}
