@@ -22,6 +22,7 @@
     min-width: 100%;
     height: 100%;
     background-color:#e62ef8;
+    /* background-color: transparent; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -81,15 +82,36 @@
 .active-work{
 opacity: 0;
 }
+.nav-twoline{
+    display: none;
+}
+
+
+/* media 520
+media 520
+meida 520 */
 
 @media (max-width:520px){
     .wrapper-header{
         display: none;
     }
-    span:hover{
-        color:black;
-        
+    .line-1-cross{
+        transform: rotate(45deg);
+        width: 80%;
+        background-color: white;
+        height: 2px;
+        align-self: flex-start;
+        transition: transform 500ms;
     }
+    .line-2-cross{
+        transform: rotate(-45deg);
+        width: 80%;
+        transition: transform 500ms;
+        background-color: white;
+        height: 2px;
+        align-self: flex-start;
+    }
+   
     @keyframes header {
         from{
             transform: translateY(-65px);
@@ -99,6 +121,53 @@ opacity: 0;
         }
         
     }
+    .span-tag-moblie{
+        font-family: "Anton", sans-serif !important;
+        line-height: 115%;
+        font-size: 40px;
+        font-size: 25vw !important;
+  font-style: normal;
+    }
+    .work-span{
+        opacity: 0;
+        animation: slide-work 400ms 600ms forwards;
+    }
+    @keyframes slide-work {
+        from {
+            transform: translateX(30px);
+        }
+        to{
+            opacity: 1;
+        }
+        
+    }
+    .about-span{
+        opacity: 0;
+        animation: slide-about 400ms 800ms forwards;
+    }
+    @keyframes slide-about {
+        from {
+            transform: translateX(30px);
+        }
+        to{
+            opacity: 1;
+        }
+        
+    }
+    .contact-span{
+        opacity: 0;
+        animation: slide-contact 400ms 1s forwards;
+    }
+    @keyframes slide-contact {
+        from {
+            transform: translateX(30px);
+        }
+        to{
+            opacity: 1;
+        }
+        
+    }
+    
     .available{
         position: absolute;
         top: 94%;
@@ -111,6 +180,16 @@ opacity: 0;
        gap: 5px;
         font-family: "Poppins",sans-serif;
         font-size: 12px;
+        opacity: 0;
+        animation: available 60 0ms 1.6s forwards;
+    }
+    @keyframes available {
+      
+        
+        to{
+            opacity: 1;
+        }
+        
     }
     .green{
         width: 8px;
@@ -119,7 +198,7 @@ opacity: 0;
         background-color: green;
     }
     
-    .menu{
+    /* .menu{
         display: block;
         position: fixed;
         top: 1%;
@@ -127,31 +206,109 @@ opacity: 0;
         padding: 5px;
         color: #fff;
         z-index: 3;
+        opacity: 0;
         animation: navicon 600ms ease-in-out forwards;
         
     }
     @keyframes navicon {
         0%{
             opacity: 0;
-            /* transform: translateY(-55px) !important; */
+            
         }
         100%{
             opacity: 1;
         }
         
     }
+     */
+     .nav-twoline{
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        height: 40px;
+        width: 40px;
+        top: 1%;
+       right: 7px;
+       align-items: center;
+       justify-content: center;
+        z-index: 3;
+        opacity: 0;
+        gap: 0px;
+        transition: transform 500ms;
+        animation: navicon 600ms ease-in-out forwards;
+        
+    }
+    .nav-cross-div{
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        height: 40px;
+        width: 40px;
+        top: 1%;
+       right: 7px;
+       align-items: center;
+       justify-content: center;
+        z-index: 3;
+        opacity: 0;
+        gap: 6px;
+        transition: transform 500ms;
+        animation: navicon 600ms ease-in-out forwards;
+        
+    }
+    @keyframes navicon {
+        0%{
+            opacity: 0;
+            
+        }
+        100%{
+            opacity: 1;
+        }
+        
+    }
+    .line-1{
+        width: 95%;
+        background-color: white;
+        height: 2px;
+        align-self: flex-start;
+        transition: transform 500ms; 
+    }
+    .line-2-1{
+        width: 70%;
+        background-color: white;
+        height: 1.5px;
+        align-self: flex-start;
+        transition: transform 500ms;
+    }
+    .line-2{
+        transition: transform 500ms;
+        width: 95%;
+        background-color: #fff;
+        height: 2px;
+        align-self: flex-start;
+      
+    }
     
     .sidebar-nav{
         display: block;
         width: 100vw;
-        height: 100vh;
-        background-color:#3d02d0;
+        height: 0;
+        background-color:#212121;
         z-index: 2;
         position: absolute;
         top: 0;
         right: 0;
         color: white;
-       
+        animation :sidebar 1s forwards;
+        
+    }
+    @keyframes sidebar {
+        from{
+            height: 0;
+        }
+        to{
+            height: 100svh;
+        }
+        
     }
     .small-wrapper-header{
         display: flex;
@@ -179,5 +336,19 @@ opacity: 0;
             
         }
 
+    }
+    .small-bottom{
+        opacity: 0;
+        animation: small-bottom 500ms 1.4s forwards;
+
+    }
+    @keyframes small-bottom {
+        from {
+            transform: translateX(20px);
+        }
+        to{
+            opacity: 1;
+        }
+        
     }
 }

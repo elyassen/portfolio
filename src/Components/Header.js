@@ -15,6 +15,7 @@ function Header() {
   const [work, setWork] = useState(false);
   const [contact, setContact] = useState(false);
   const [navIcon, setNavIcon] = useState(true);
+  const [navCross, setNavCross] = useState(false);
 
   const handlework = () => {
     setWork(true);
@@ -60,15 +61,36 @@ function Header() {
           <LinkedinOutlined id="span" />
         </div>
       </div>
-      <div onClick={() => setNavIcon(!navIcon)} className="menu">
+      {/* <div onClick={() => setNavIcon(!navIcon)} className="menu">
         {navIcon ? <MenuOutlined id="icons" /> : <CloseOutlined id="icons" />}
+      </div> */}
+      <div
+        className={navCross ? "nav-twoline" : "nav-cross-div"}
+        onClick={() => {
+          setNavIcon(!navIcon);
+          setNavCross(!navCross);
+        }}
+      >
+        <div className={`${!navCross ? "line-1" : "line-1-cross"}`}></div>
+        <div className={`${!navCross ? "line-2-1" : "line-2-1-cross"}`}></div>
+
+        <div className={`${!navCross ? "line-2" : "line-2-cross"}`}></div>
       </div>
       {!navIcon && (
         <div className="sidebar-nav">
           <div className="small-wrapper-header">
-            <span onClick={handlework}>Work</span>
-            <span onClick={handleAbout}>About</span>
-            <span onClick={handleContact}>Contact</span>
+            <span className="span-tag-moblie work-span" onClick={handlework}>
+              Work
+            </span>
+            <span className="span-tag-moblie about-span" onClick={handleAbout}>
+              About
+            </span>
+            <span
+              className="span-tag-moblie contact-span"
+              onClick={handleContact}
+            >
+              Contact
+            </span>
             <div className="small-bottom">
               <GithubOutlined />
               <LinkedinOutlined />

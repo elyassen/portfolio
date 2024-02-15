@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./main.css";
+import { CloseOutlined } from "@ant-design/icons";
 
 function Main() {
   const [bigCursor, setBigCursor] = useState(false);
@@ -163,13 +164,22 @@ function Main() {
             </p>
             <div className="explore-resume-wrapper">
               <button onClick={() => setSkill(true)} className="explore-btn">
-                Explore skills
+                Areas of Expertise
               </button>
-              <button className="explore-btn">Resume</button>
+              <a
+                href={require("./static/YaseenResume.pdf")}
+                target="_blank"
+                download=""
+              >
+                <button className="explore-btn">Resume</button>
+              </a>
             </div>
           </div>
         ) : (
           <div className="skills-main">
+            <div className="close" onClick={() => setSkill(false)}>
+              <CloseOutlined />
+            </div>
             <div className="skill-left">
               <div className="skill">
                 <h4 className="skill-text">HTML</h4>

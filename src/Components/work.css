@@ -1,17 +1,23 @@
 .work{
     width: 70vw;
-    height: 100vh;
+    height: 100svh;
     background-color: #87f9d4;
     z-index: 6;
     position: absolute;
     top: 0;
     right: 61px;
-    animation: workwidth 200ms ease-in;
+    animation: workwidth 400ms  forwards;
     overflow-y: scroll;
     padding: 20px; 
 }
+
+
 .work::-webkit-scrollbar{
     display: none;
+}
+.work-second{
+    height: 120vh;
+    background-color: red;
 }
 
 
@@ -20,14 +26,16 @@
     align-items: center;
     padding: 15px;
     justify-content: space-between;
+    
 }
 
 .work-heading{
     padding: 1px;
+    opacity: 0;
     font-size: 35px;
     font-family: "Protest Revolution", sans-serif;    
     border-bottom: 1px solid black;
-    animation: work-animation-heading 300ms;
+    animation: work-animation-heading 300ms 100ms forwards;
 }
 .work-heading:hover{
     color: black;
@@ -35,7 +43,7 @@
 @keyframes work-animation-heading {
  0%{
     opacity: 0;
-    transform: translateX(20px);
+   
  }
  100%{
     transform: translateX(0);
@@ -52,7 +60,7 @@
 }
 @media (max-width:520px){
     .work{
-        width: 100vw;
+        width: 100vw ;
         z-index: 99;
         right: 0;
         padding: 2px 4px;

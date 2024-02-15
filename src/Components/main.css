@@ -45,8 +45,7 @@ width: fit-content;
     display: flex;
     gap: 3px;
     height: 8%;
-    width: 100%;
-    
+    width: 100%;   
 opacity: 0;
 animation:portfolio 800ms ease-in-out forwards
     
@@ -90,13 +89,14 @@ animation:portfolio 800ms ease-in-out forwards
 }
 .name-area{
     position: absolute;
+    /* border: 1px solid red; */
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
     text-align: center;
-    /* height: 80%; */
-    min-height: max-content;
+    height: 83%;
+    /* min-height: max-content; */
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
@@ -110,10 +110,9 @@ animation:portfolio 800ms ease-in-out forwards
 .name{
     font-family: 'Poppins', sans-serif;
     /* font-family: "Protest Revolution", sans-serif;     */
-
     font-size: 32px;
     color: #fff;
-    animation: name 900ms 600ms ease-out forwards;
+    animation: name 990ms 700ms ease-out forwards;
     opacity: 0;
 }
 @keyframes name {
@@ -129,6 +128,7 @@ animation:portfolio 800ms ease-in-out forwards
 .full-stack-heading{
     
     font-family: 'Poppins', sans-serif;
+ 
 
 
     /* font-family: boldStyle; */
@@ -138,7 +138,7 @@ animation:portfolio 800ms ease-in-out forwards
     align-items: center;
     cursor: crosshair;
     opacity: 0;
-    animation: fullstack 900ms 800ms forwards;
+    animation: fullstack 1000ms 900ms forwards;
     
     
 }
@@ -158,7 +158,7 @@ animation:portfolio 800ms ease-in-out forwards
 
     font-size: 17px;
     opacity: 0;
-    animation: desc 800ms 1.1s forwards;
+    animation: desc 800ms 1.3s forwards;
     
 }
 @keyframes desc {
@@ -235,14 +235,31 @@ animation:portfolio 800ms ease-in-out forwards
     background-color: #e62ee6;
     opacity:.7;
 }
+.close{
+    color: white;
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    cursor: pointer;
+}
 .skills-main{
-    width: 60%;
-    /* border: 1px solid red; */
-    height: fit-content;
+    width: 100%;
+    height: max-content;
+   background-color: #000;
+    position: absolute;
+    top: 10%;
+    left: 0;
     display: flex;
-    padding: 10px;
+    padding: 20px;
     gap: 70px;
-    
+    padding-top: 90px;
+    opacity: 0;
+    animation: skill-main 400ms forwards;
+}
+@keyframes skill-main {
+    to{
+        opacity: 1;
+    }
     
 }
 
@@ -280,7 +297,6 @@ animation:portfolio 800ms ease-in-out forwards
     background-color:  #483d8b;
     width: 0;
     height: 2.5px;
-    
     animation: levelup 800ms 1s forwards;
 }
 .explore-skills{
@@ -323,12 +339,13 @@ gap:25px
     padding: 10px 20px;
     border: 1px solid white;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
     font-family: "Protest Revolution", sans-serif;
     animation: explore-btn 300ms 1.55s forwards;
     opacity: 0;
     transition: 300ms;
-    width: 150px;
+    width: 250px;
 }
 .explore-btn:hover{
     background-color: white;
@@ -401,21 +418,46 @@ gap:25px
 @media (max-width:520px){
     .main{
         min-width: 100%;
-        /* padding-bottom: 220px; */
-    
-        /* padding-top: 20px; */
-        
+        min-height: 100svh;
+        position: none;
+        display: flex;
+        flex-direction: column;  
+        padding-bottom: 10px;
+        position: relative;
         
     }
+
+    .explore-btn{
+        transform: 0s;
+    }
+    .cursor{
+        display: none;
+    }
+    .big-cursor{
+        display: none;
+    }
+    .astrik{
+        display: none;
+    }
     .portfolio-heading-2{
-    display: none;}
-    .portfolio-heading{
-border-bottom: none;}
+    font-size: 18px;
+    margin-top: -5px;
+}
+.portfolio-wrapper{  
+    padding: 0 5px;
+    width: fit-content;
+    /* background-color: red; */
+    
+}
+    
     .name-area{
+        position: none;
         width: 95vw;
         margin-top: 5%;
         gap: 10px;
-        top: 12%;
+        /* top: 12%; */
+
+        height: max-content;
     }
     .name{
         font-size: 22px;  
@@ -431,37 +473,60 @@ border-bottom: none;}
         width: 92vw;
     }
     .portfolio-heading::before{
-        width: 0;
-        height: 0;
-        display: none;
+      display: none;
     }
     .explore-skills{
         width: 92vw;
-        
-        
+    }
+    .explore-resume-wrapper{
+        flex-direction: column;
+        gap: 15px;
     }
    
    
     .header-main{
+        position: relative;
         width: 100%;
-        border-bottom: 1px solid white;
-        padding: 5px;
-        background-color: #210c6e;
-        z-index: 2;
+        padding:10px 5px;
         top: 0;
+        background-color: transparent;
         margin-top: -1px;
-        max-height: 50px;
+        max-height: 55px;
     }
     .skills-main{
         width: 100%;
         flex-direction: column;
         gap: 15px;
+        padding-top: 70px;
+        padding-bottom: 40px;
+        top: 0;
+        height: 80vh !important;
+        overflow-y: scroll;
+        animation:skill-main 500ms forwards alternate;
+        opacity: 0;
+    
+    }
+    .skills-main::-webkit-scrollbar{
+        display: none;
+    }
+    @keyframes skill-main {
+        from {
+            transform: translateY(400px);
+        }
+        to{
+            
+            height: fit-content;
+            opacity: 1;
+        }
+        
     }
     .skill-left{
         width: 100%;
+        gap: 17px;
     }
     .skill-right{
         width: 100%;
+        gap: 17px;
     }
     
    
@@ -477,8 +542,10 @@ border-bottom: none;}
     }
     .explore-resume-wrapper{
     flex-direction: column;
-
-
+    gap: 10px;
+}
+.explore-btn{
+    width: 90vw;
 }
     
 }
