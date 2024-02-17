@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./main.css";
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, DownCircleOutlined } from "@ant-design/icons";
 
 function Main() {
   const [bigCursor, setBigCursor] = useState(false);
@@ -152,34 +152,38 @@ function Main() {
           A passionate developer on a mission to craft exceptional digital
           experiences that make a difference.
         </div>
-        {!skill ? (
-          <div className={`explore-skills ${!skill ? "" : "explore-out"}`}>
-            <p className="explore-text">
-              I'm a versatile web developer skilled in React.js, JavaScript,
-              Node.js, Express.js, MongoDB, SQL, Java, and responsive design. I
-              create engaging user interfaces and build robust, scalable
-              applications. My passion for innovation and problem-solving drives
-              me to deliver impactful digital experiences across various
-              devices.
-            </p>
-            <div className="explore-resume-wrapper">
-              <button onClick={() => setSkill(true)} className="explore-btn">
-                Areas of Expertise
-              </button>
-              <a
-                href={require("./static/YaseenResume.pdf")}
-                target="_blank"
-                download=""
-              >
-                <button className="explore-btn">Resume</button>
-              </a>
-            </div>
+
+        <div className={`explore-skills ${!skill ? "" : "explore-out"}`}>
+          <p className="explore-text">
+            I've gained ample experience working with diverse technologies as a
+            developer. I've built and managed multiple projects using these
+            technologies, and I'm keen on continuous learning.
+          </p>
+          <div className="explore-resume-wrapper">
+            <button onClick={() => setSkill(true)} className="explore-btn">
+              Areas of Expertise
+            </button>
+            <a
+              href={require("./static/YaseenResume.pdf")}
+              target="_blank"
+              download=""
+            >
+              <button className="explore-btn">Resume</button>
+            </a>
           </div>
-        ) : (
+        </div>
+
+        {skill && (
           <div className="skills-main">
             <div className="close" onClick={() => setSkill(false)}>
+              {/* kddkkd */}
               <CloseOutlined />
+              {/* <span className="close-1"></span> */}
             </div>
+            <DownCircleOutlined
+              className="close-ss"
+              onClick={() => setSkill(false)}
+            />
             <div className="skill-left">
               <div className="skill">
                 <h4 className="skill-text">HTML</h4>

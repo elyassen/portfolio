@@ -9,6 +9,10 @@
     animation: workwidth 400ms  forwards;
     overflow-y: scroll;
     padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
 }
 
 
@@ -16,18 +20,101 @@
     display: none;
 }
 .work-second{
-    height: 120vh;
-    background-color: red;
+    display: flex;
+    /* border: 1px solid red; */
+    width: 100%;
+    flex-direction: column;
+}
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    border: 1px solid green;
+    padding: 10px;
+    margin: 10px;
+   
+}
+
+.project-img{
+position: relative;
+width: 100%;
+display: flex;
+justify-content: center;
+padding: 20px;
+padding-bottom: 5px;
+
+}
+.mobile{
+    height: 300px;
+    animation: project-img 700ms 1s forwards;
+    opacity: 0;
+
+}
+.project-info{
+    width: 85%;
+    text-align: center;
+    font-size: 13px;
+    font-family: "mullish",sans-serif;
+    opacity: 0;
+    animation: project-info 700ms 1.2s forwards;
+    
+}
+@keyframes project-info {
+    from{
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+    }
+    
 }
 
 
+
+.text-project{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 150px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 10px;
+    font-family: "mullish",sans-serif;
+    z-index: -2;
+    opacity: 0;
+    animation: text 500ms 400ms forwards;
+    
+
+}
+@keyframes text {
+    to{
+        opacity: 1;
+    }
+    
+    
+}
 .top-work{
     display: flex;
     align-items: center;
+    /* border: 1px solid red; */
+    width: 100%;
+    justify-content: space-between;
     padding: 15px;
     justify-content: space-between;
     
 }
+
+@keyframes project-img {
+    from{
+        transform: translateY(5px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 
 .work-heading{
     padding: 1px;
@@ -64,6 +151,25 @@
         z-index: 99;
         right: 0;
         padding: 2px 4px;
+    }
+    .text-project{
+        text-align: start;
+    }
+    .project{
+        height: 65vh;
+        padding: 10px;
+        overflow: hidden;
+        width: 95%;
+    }
+    .project-info{
+        width: 100%;
+    }
+    .mobile{
+        width: 150px;
+        height: auto;
+    }
+    .text-project{
+        font-size: 130px;
     }
     .close-icon-work{
         transform: rotate(180deg);

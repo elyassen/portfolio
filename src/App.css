@@ -1,7 +1,7 @@
 .App{
   max-width: 100%;
   position: relative;
-  max-height: 100vh;
+  max-height: 100svh;
   overflow: hidden;
   display: flex;
   background-color:#210c6e;

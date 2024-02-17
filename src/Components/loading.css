@@ -1,0 +1,49 @@
+.loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #212121;
+    z-index: 111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #e9e6df;
+    font-family: "Teko", sans-serif;
+    animation: loading 800ms 1000ms forwards;
+    letter-spacing: 2px;
+    font-size: 30px;
+    text-align: center;
+    p{
+        align-self: flex-start;
+    }
+    
+}
+@keyframes loading {
+    to{
+        transform: translateY(-100vh);
+    }
+    
+}
+.progress{
+    width: 100%;
+    height: 1px;
+    background-color: transparent;
+}
+.fill{
+    height: 100%;
+    background-color:#e9e6df;
+    width: 0;
+    animation: progress 800ms forwards;
+    transition: width 400ms;
+}
+@keyframes progress {
+    to{
+        width: 100%;
+    }
+    
+}
