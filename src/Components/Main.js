@@ -1,8 +1,39 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./main.css";
 import { CloseOutlined, DownCircleOutlined } from "@ant-design/icons";
 
 function Main() {
+  const techArr = [
+    "Redux",
+    "Axios",
+    "Material-UI",
+    "SQL",
+    "Java",
+    "HTML",
+    "React Router",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Bootstrap",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+  ];
+
+  const [count, setCount] = useState(0);
+  const [Tech, setTech] = useState(techArr[count]);
+  useEffect(() => {
+    const intervel = setInterval(() => {
+      setCount(count + 1);
+      if (count === techArr.length - 1) {
+        setCount(0);
+      }
+      console.log("text");
+      setTech(techArr[count]);
+    }, 1000);
+    return () => clearInterval(intervel);
+  }, [count]);
   const [bigCursor, setBigCursor] = useState(false);
   const [showCursor, setShowCursor] = useState(false);
   const [skill, setSkill] = useState(false);
@@ -262,6 +293,11 @@ function Main() {
             </div>
           </div>
         )}
+        {/* <div className="last-div">
+          <p>Hyderabad based developer can work with following</p>
+
+          <h1>{Tech}</h1>
+        </div> */}
 
         {/* <div className="explore">Explore</div> */}
       </div>
