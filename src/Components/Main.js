@@ -31,7 +31,7 @@ function Main() {
       }
       console.log("text");
       setTech(techArr[count]);
-    }, 1000);
+    }, 1500);
     return () => clearInterval(intervel);
   }, [count]);
   const [bigCursor, setBigCursor] = useState(false);
@@ -293,11 +293,11 @@ function Main() {
             </div>
           </div>
         )}
-        {/* <div className="last-div">
-          <p>Hyderabad based developer can work with following</p>
+        <div className="last-div">
+          <p>In my projects, I've worked with the following technologies:</p>
 
-          <h1>{Tech}</h1>
-        </div> */}
+          <h1 className="tech-text">{Tech}</h1>
+        </div>
 
         {/* <div className="explore">Explore</div> */}
       </div>

@@ -6,13 +6,24 @@
     position: absolute;
     top: 0;
     right: 61px;
-    animation: workwidth 400ms  forwards;
+    animation: workwidth 500ms  forwards;
     overflow-y: scroll;
     padding: 20px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    transition: width 400ms ease;
+  
+}
+@keyframes workwidth {
+    from{
+       width: 0;
+    }
+    to{
+        width: 70vw;
+    }
+    
 }
 
 
@@ -21,7 +32,7 @@
 }
 .work-second{
     display: flex;
-    /* border: 1px solid red; */
+    
     width: 100%;
     flex-direction: column;
 }
@@ -33,6 +44,8 @@
     border: 1px solid green;
     padding: 10px;
     margin: 10px;
+    min-height: max-content;
+    gap: 10px;
    
 }
 
@@ -58,6 +71,10 @@ padding-bottom: 5px;
     font-family: "mullish",sans-serif;
     opacity: 0;
     animation: project-info 700ms 1.2s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
     
 }
 @keyframes project-info {
@@ -85,6 +102,7 @@ padding-bottom: 5px;
     z-index: -2;
     opacity: 0;
     animation: text 500ms 400ms forwards;
+    color: #2d2d2d;
     
 
 }
@@ -139,6 +157,23 @@ padding-bottom: 5px;
  }
     
 }
+.live-link-btn{
+    background-color: transparent;
+    width: 200px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 720;
+    letter-spacing: 1px;
+    font-family:"Poppins",sans-serif;
+    background-color: #ed1846;
+    transition: transform 700ms;
+}
+.live-link-btn:hover{
+    transform: scaleY(1.01);
+    background-color: #fb476e;
+}
 
 @media(max-width:750px){
     .work{
@@ -152,11 +187,21 @@ padding-bottom: 5px;
         right: 0;
         padding: 2px 4px;
     }
+    @keyframes workwidth {
+        from{
+            width: 0;
+        }
+        to{
+            width: 100vw;
+            opacity: 1;
+        }
+        
+    }
     .text-project{
         text-align: start;
     }
     .project{
-        height: 65vh;
+        /* height: 65vh; */
         padding: 10px;
         overflow: hidden;
         width: 95%;

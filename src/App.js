@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import "./App.css";
 import Main from "./Components/Main";
 import Loading from "./Components/Loading";
+import { BrowserRouter, Router } from "react-router-dom";
 
 function App() {
   const [loading, setLoadig] = useState(true);
@@ -12,16 +13,18 @@ function App() {
     }, 1800);
   }, []);
   return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className="App">
-          <Main />
-          <Header />
-        </div>
-      )}
-    </>
+    <BrowserRouter>
+      <>
+        {loading ? (
+          <Loading />
+        ) : (
+          <div className="App">
+            <Main />
+            <Header />
+          </div>
+        )}
+      </>
+    </BrowserRouter>
   );
 }
 export default App;

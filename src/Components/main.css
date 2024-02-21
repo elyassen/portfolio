@@ -89,7 +89,7 @@ animation:portfolio 800ms ease-in-out forwards
 .name-area{
     position: absolute;
     /* border: 1px solid red; */
-    top: 15%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
@@ -99,6 +99,7 @@ animation:portfolio 800ms ease-in-out forwards
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 10px;
     padding-bottom: 50px;
 
@@ -263,11 +264,11 @@ animation:portfolio 800ms ease-in-out forwards
 .skills-main{
     width: 100%;
     height: max-content;
-   background-color:#ed1846
-   ;
+   background-color:#ed1846;
+   
     position: absolute;
     border-radius: 12px;
-    top: 10%;
+    top: 5%;
     left: 0;
     display: flex;
     padding: 20px;
@@ -277,8 +278,8 @@ animation:portfolio 800ms ease-in-out forwards
     align-items: center;
     justify-content: center;
     opacity: 0;
-
     animation: skill-main 600ms forwards;
+    z-index: 2;
     
    
 }
@@ -300,7 +301,8 @@ animation:portfolio 800ms ease-in-out forwards
     flex-direction: column;
     align-items: flex-start;
     padding: 2px;
-    gap: 10px;
+    gap: 15px;
+    align-self: flex-start;
     
 }
 .skill-right{
@@ -311,7 +313,7 @@ animation:portfolio 800ms ease-in-out forwards
     flex-direction: column;
     align-items: flex-start;
     padding: 2px;
-    gap: 10px;
+   
     
 }
 .skill{
@@ -364,9 +366,10 @@ gap:25px
 }
 .explore-btn{
     background-color: transparent;
-    color: white;
+    color: wheat;
     padding: 10px 20px;
     border: 1px solid white;
+    background-color:transparent;
     cursor: pointer;
     font-size: 16px;
     letter-spacing: 1px;
@@ -433,6 +436,8 @@ gap:25px
 .skill-right{
     width: 50%;
     height: 100%;
+    align-self: flex-start;
+    gap: 15px;
     
     /* border: 1px solid  blue; */
 }
@@ -445,13 +450,26 @@ gap:25px
     flex-direction: column;
     width: 70%;
     margin-top: 50px;
-    font-family: "mullish",sans-serif;
+    animation: lastdiv 1.4s 1.9s forwards;
+    opacity: 0;
+    z-index: 1;
     p{
         font-size: 10px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    }
+    h1{
+        font-family: 'Courier New', Courier, monospace;
     }
 }
 
-
+@keyframes lastdiv {
+    from{
+        transform: translateY(5px);
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
 
 
 
@@ -569,6 +587,8 @@ gap:25px
         right: 0;
         padding-top: 70px;
         padding-bottom: 50px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius:0 ;
         overflow-y: scroll;
         animation:skill-main 600ms forwards alternate;
         opacity: 0;
